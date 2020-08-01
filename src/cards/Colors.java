@@ -16,7 +16,7 @@ public enum Colors {
     private final String englishDescription;
     private final String[] polishFigures;
     private final String[] englishFigures;
-    private final String[] numberedCards;
+//    private final String[] numberedCards;
     public static final String POLISH = "PL";
     public static final String ENGLISH = "EN";
 
@@ -24,9 +24,10 @@ public enum Colors {
     Colors(String polishDescription, String englishDescription) {
         this.polishDescription = polishDescription;
         this.englishDescription = englishDescription;
-        this.polishFigures = new String[]{"walet","dama","król","as"};
-        this.englishFigures = new String[]{"jack","queen","king","ace"};
-        this.numberedCards = new String[]{"2","3","4","5","6","7","8","9","10"};
+        this.polishFigures = new String[]{"dwójka","trójka","czwórka","piątka","szóstka","siódemka","ósemka","dziewiątka","dziesiątka","walet","dama","król","as"};
+        this.englishFigures = new String[]{"two","three","four","five","six","seven","eight","nine","ten","jack","queen","king","ace"};
+//        this.polishNumbers = new String[]{"dwójka","trójka","czwórka","piątka","szóstka","siódemka","ósemka","dziewiątka","dziesiątka"};
+//        this.englishNumbers = new String[]{"two","three","four","five","six","seven","eight","nine","ten"};
     }
 
     public String getPolishDescr() {
@@ -43,10 +44,6 @@ public enum Colors {
 
     public String[] getEnglishFigures() {
         return englishFigures;
-    }
-
-    public String[] getNumberedCards() {
-        return numberedCards;
     }
 
     public static Map<String, String[]> translate(String language) {

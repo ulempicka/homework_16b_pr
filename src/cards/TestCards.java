@@ -13,15 +13,41 @@ public class TestCards {
 
         Map<String, String[]> setTranslated = Colors.translate(userChoice);
 
-        for (String color : setTranslated.keySet()) {
-            System.out.println(color + " karty: " + Arrays.toString(setTranslated.get(color)));
-        }
+        showCardsPerColor(setTranslated);
+        showCards(setTranslated, userChoice);
+    }
 
-        System.out.println("Poszczególne karty");
+    private static void showCardsPerColor(Map<String, String[]> setTranslated) {
         for (String color : setTranslated.keySet()) {
-            for (int i = 0; i < setTranslated.keySet().size(); i++) {
-                System.out.println(setTranslated.get(color)[i] + " " + color);
+            System.out.println(color + " : " + Arrays.toString(setTranslated.get(color)));
+        }
+        System.out.println("--------------------------------------------");
+    }
+
+    private static void showCards(Map<String, String[]> setTranslated, String language) {
+        switch (language) {
+            case "PL": {
+                System.out.println("Poszczególne karty w zestawie");
+                for (String color : setTranslated.keySet()) {
+                    for (int i = 0; i < setTranslated.get(color).length; i++) {
+                        System.out.println(setTranslated.get(color)[i] + " " + color);
+                    }
+                    System.out.println("--------------------------------------------");
+                }
+                break;
             }
+            case "EN": {
+                System.out.println("Set contains cards:");
+                for (String color : setTranslated.keySet()) {
+                    for (int i = 0; i < setTranslated.get(color).length; i++) {
+                        System.out.println(setTranslated.get(color)[i] + " of " + color);
+                    }
+                    System.out.println("--------------------------------------------");
+                }
+                break;
+            }
+            default:
+                throw new IllegalArgumentException("nieprawidlowy kod jezyka");
         }
     }
 }
