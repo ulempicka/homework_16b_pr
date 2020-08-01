@@ -14,7 +14,7 @@ public class TestCards {
         Map<String, String[]> setTranslated = Colors.translate(userChoice);
 
         showCardsPerColor(setTranslated);
-        showCards(setTranslated, userChoice);
+        showAllCards(setTranslated, userChoice);
     }
 
     private static void showCardsPerColor(Map<String, String[]> setTranslated) {
@@ -24,7 +24,7 @@ public class TestCards {
         System.out.println("--------------------------------------------");
     }
 
-    private static void showCards(Map<String, String[]> setTranslated, String language) {
+    private static void showAllCards(Map<String, String[]> setTranslated, String language) {
         switch (language) {
             case "PL": {
                 System.out.println("Poszczególne karty w zestawie");
