@@ -8,16 +8,16 @@ public enum Season {
     AUTUMN("jesień", new String[]{"wrz", "paz", "lis"}),
     WINTER("zima", new String[]{"gru", "sty", "lut"});
 
-    private final String polish;
+    private final String polishDescription;
     private final String[] months;
 
-    Season(String polish, String[] months) {
-        this.polish = polish;
+    Season(String polishDescription, String[] months) {
+        this.polishDescription = polishDescription;
         this.months = months;
     }
 
     public String getPolish() {
-        return polish;
+        return polishDescription;
     }
 
     public String[] getMonths() {
