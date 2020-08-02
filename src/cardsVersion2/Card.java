@@ -1,59 +1,49 @@
 package cardsVersion2;
 
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Card {
     public static final String POLISH = "PL";
     public static final String ENGLISH = "EN";
-//    private String color;       //czy enum
-//    private String figure;
     private Colors colors;
     private Figures figures;
-//
-//    public Card(String color, String figure) {
-//        this.color = color;
-//        this.figure = figure;
-//    }
 
-    public Map<String, String> translate(String language) {
-        Map<String, String> setOfCards = new TreeMap<>();
+    public Card(Colors colors, Figures figures) {
+        this.colors = colors;
+        this.figures = figures;
+    }
+
+    public Card() {
+    }
+
+    public List<Card> createCards() {
+        List<Card> setOfCards = new ArrayList<>();
+
+        for (Colors c : colors.values()) {
+            for (Figures f : figures.values()) {
+                setOfCards.add(new Card(c, f));
+            }
+        }
+        return setOfCards;
+    }
+
+    public void translate(List<Card> setOfCards, String language) {
         switch (language) {
             case POLISH:
-                for (Colors c : colors.values()) {
-                    for (Figures f : figures.values()) {
-                        setOfCards.put(c.getPolishDescription(), figures.getPolishDescription());
-                    }
+                System.out.println("Poszczególne karty w zestawie");
+                for (Card card : setOfCards) {
+                    System.out.println(card.colors.getPolishDescription() + " : " + card.figures.getPolishDescription());
                 }
                 break;
             case ENGLISH:
-                for (Colors c : colors.values()) {
-                    for (Figures f : figures.values()) {
-                    setOfCards.put(c.getEnglishDescription(),figures.getEnglishDescription());
-                }}
+                System.out.println("Set contains cards:");
+                for (Card card : setOfCards) {
+                    System.out.println(card.colors.getEnglishDescription() + " of " + card.figures.getEnglishDescription());
+                }
                 break;
             default:
                 throw new IllegalArgumentException("nieprawidlowy kod jezyka");
         }
-
-        return setOfCards;
     }
-
-//    public Card translateCard(String language, String color, String figure) {
-//        switch (language) {
-//            case POLISH:
-//                    Card card = new Card((color.getPolishDescription(),figures.getPolishDescription());
-//                }
-//                break;
-//            case ENGLISH:
-//                for (Colors c : colors.values()) {
-//                    setOfCards.put(c.getEnglishDescription(),figures.getEnglishDescription());
-//                }
-//                break;
-//            default:
-//                throw new IllegalArgumentException("nieprawidlowy kod jezyka");
-//        }
-//
-//        return setOfCards;
-//    }
 }

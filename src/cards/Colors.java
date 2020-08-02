@@ -1,7 +1,5 @@
 package cards;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -23,8 +21,8 @@ public enum Colors {
     Colors(String polishDescription, String englishDescription) {
         this.polishDescription = polishDescription;
         this.englishDescription = englishDescription;
-        this.polishFigures = new String[]{"dwójka","trójka","czwórka","piątka","szóstka","siódemka","ósemka","dziewiątka","dziesiątka","walet","dama","król","as"};
-        this.englishFigures = new String[]{"two","three","four","five","six","seven","eight","nine","ten","jack","queen","king","ace"};
+        this.polishFigures = new String[]{"dwójka", "trójka", "czwórka", "piątka", "szóstka", "siódemka", "ósemka", "dziewiątka", "dziesiątka", "walet", "dama", "król", "as"};
+        this.englishFigures = new String[]{"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king", "ace"};
     }
 
     public String getPolishDescr() {
@@ -45,20 +43,20 @@ public enum Colors {
 
     public static Map<String, String[]> translate(String language) {
         Map<String, String[]> setOfCards = new TreeMap<>();
-            switch (language) {
-                case POLISH:
-                    for (Colors c : values()) {
-                        setOfCards.put(c.getPolishDescr(),c.getPolishFigures());
-                    }
-                    break;
-                case ENGLISH:
-                    for (Colors c : values()) {
-                        setOfCards.put(c.getEnglishDescr(),c.getEnglishFigures());
-                    }
-                    break;
-                default:
-                    throw new IllegalArgumentException("nieprawidlowy kod jezyka");
-            }
+        switch (language) {
+            case POLISH:
+                for (Colors c : values()) {
+                    setOfCards.put(c.getPolishDescr(), c.getPolishFigures());
+                }
+                break;
+            case ENGLISH:
+                for (Colors c : values()) {
+                    setOfCards.put(c.getEnglishDescr(), c.getEnglishFigures());
+                }
+                break;
+            default:
+                throw new IllegalArgumentException("nieprawidlowy kod jezyka");
+        }
 
         return setOfCards;
     }
