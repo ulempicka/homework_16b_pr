@@ -16,7 +16,6 @@ public enum Colors {
     private final String englishDescription;
     private final String[] polishFigures;
     private final String[] englishFigures;
-//    private final String[] numberedCards;
     public static final String POLISH = "PL";
     public static final String ENGLISH = "EN";
 
@@ -26,8 +25,6 @@ public enum Colors {
         this.englishDescription = englishDescription;
         this.polishFigures = new String[]{"dwójka","trójka","czwórka","piątka","szóstka","siódemka","ósemka","dziewiątka","dziesiątka","walet","dama","król","as"};
         this.englishFigures = new String[]{"two","three","four","five","six","seven","eight","nine","ten","jack","queen","king","ace"};
-//        this.polishNumbers = new String[]{"dwójka","trójka","czwórka","piątka","szóstka","siódemka","ósemka","dziewiątka","dziesiątka"};
-//        this.englishNumbers = new String[]{"two","three","four","five","six","seven","eight","nine","ten"};
     }
 
     public String getPolishDescr() {
