@@ -1,6 +1,6 @@
 package cardsVersion2;
 
-public enum Colors {
+public enum Color {
 
     TREFL("żołądź", "clubs"),
     KARO("dzwonek", "diamonds"),
@@ -10,7 +10,7 @@ public enum Colors {
     private final String polishDescription;
     private final String englishDescription;
 
-    Colors(String polishDescription, String englishDescription) {
+    Color(String polishDescription, String englishDescription) {
         this.polishDescription = polishDescription;
         this.englishDescription = englishDescription;
     }

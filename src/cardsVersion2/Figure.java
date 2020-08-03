@@ -1,6 +1,6 @@
 package cardsVersion2;
 
-public enum Figures {
+public enum Figure {
     TWO("dwójka", "two"),
     THREE("trójka", "three"),
     FOUR("czwórka", "four"),
@@ -18,7 +18,7 @@ public enum Figures {
     private final String polishDescription;
     private final String englishDescription;
 
-    Figures(String polishDescription, String englishDescription) {
+    Figure(String polishDescription, String englishDescription) {
         this.polishDescription = polishDescription;
         this.englishDescription = englishDescription;
     }

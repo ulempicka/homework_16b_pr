@@ -6,12 +6,12 @@ import java.util.List;
 public class Card {
     public static final String POLISH = "PL";
     public static final String ENGLISH = "EN";
-    private Colors colors;
-    private Figures figures;
+    private Color color;
+    private Figure figure;
 
-    public Card(Colors colors, Figures figures) {
-        this.colors = colors;
-        this.figures = figures;
+    public Card(Color color, Figure figure) {
+        this.color = color;
+        this.figure = figure;
     }
 
     public Card() {
@@ -20,8 +20,8 @@ public class Card {
     public List<Card> createCards() {
         List<Card> setOfCards = new ArrayList<>();
 
-        for (Colors c : colors.values()) {
-            for (Figures f : figures.values()) {
+        for (Color c : color.values()) {
+            for (Figure f : figure.values()) {
                 setOfCards.add(new Card(c, f));
             }
         }
@@ -33,13 +33,13 @@ public class Card {
             case POLISH:
                 System.out.println("Poszczególne karty w zestawie");
                 for (Card card : setOfCards) {
-                    System.out.println(card.colors.getPolishDescription() + " : " + card.figures.getPolishDescription());
+                    System.out.println(card.color.getPolishDescription() + " : " + card.figure.getPolishDescription());
                 }
                 break;
             case ENGLISH:
                 System.out.println("Set contains cards:");
                 for (Card card : setOfCards) {
-                    System.out.println(card.colors.getEnglishDescription() + " of " + card.figures.getEnglishDescription());
+                    System.out.println(card.color.getEnglishDescription() + " of " + card.figure.getEnglishDescription());
                 }
                 break;
             default:
